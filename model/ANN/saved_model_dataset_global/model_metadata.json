@@ -1,0 +1,64 @@
+{
+  "model_name": "ANN Klasifikasi Kelulusan Mahasiswa",
+  "features": [
+    "Assignments_Avg",
+    "Midterm_Score",
+    "Final_Score"
+  ],
+  "target": "Status",
+  "label_classes": [
+    "Lulus",
+    "Tidak_Lulus"
+  ],
+  "architecture": {
+    "hidden_layers": [
+      128,
+      64,
+      32
+    ],
+    "activation": "relu",
+    "output_activation": "sigmoid",
+    "dropout_rates": [
+      0.3,
+      0.2,
+      0.2
+    ],
+    "batch_norm": true,
+    "l2_regularization": 0.0001
+  },
+  "training_params": {
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "binary_crossentropy",
+    "max_epochs": 200,
+    "batch_size": 32,
+    "early_stopping": {
+      "patience": 20,
+      "monitor": "val_loss"
+    }
+  },
+  "evaluation": {
+    "test_accuracy": 0.8013,
+    "test_precision": 0.9508,
+    "test_recall": 0.8013,
+    "test_f1": 0.8528,
+    "test_auc_roc": 0.9102
+  },
+  "cv_results": {
+    "k_folds": 5,
+    "mean_accuracy": 0.838,
+    "std_accuracy": 0.0317,
+    "mean_f1": 0.8767,
+    "std_f1": 0.02,
+    "mean_auc": 0.9214,
+    "std_auc": 0.0106
+  },
+  "references": [
+    "Hou & Zhou (2021) — IEEE Access",
+    "Hussain et al. (2022) — Expert Systems with Applications",
+    "Pallathadka et al. (2023) — Journal of Interdisciplinary Mathematics",
+    "Alyahyan & Düştegör (2023) — IJETH",
+    "Adejo & Connolly (2024) — JARHE",
+    "Namoun & Alshanqiti (2021) — Applied Sciences"
+  ]
+}
